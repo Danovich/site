@@ -1,0 +1,188 @@
+/*
+Variables
+
+--color-green:#00dd33;
+--color-light-green:#aaff00;
+--color-light-green2:#84FF57;
+--color-dark-grey:#444444;
+--color-grey:#999999;
+--color-light-grey:	#eeeeee;
+--color-light-grey2:#fafafa;
+--color-blue:#1E2A80;
+
+--breakpoint-xs: 0;
+--breakpoint-sm: 576px;
+--breakpoint-md: 768px;
+--breakpoint-lg: 992px;
+--breakpoint-xl: 1200px;
+
+--font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto;
+*/
+
+:root{
+ --color-green:#00dd33;
+ --color-light-green:#aaff00;
+ --color-blue:#1E2A80;
+ --color-dark-grey:#444444;
+ --color-grey:#999999;
+ --color-light-grey:#eeeeee;
+
+ --md-shadow:0 1rem 2rem rgba(0, 0, 0, 0.19), 0 .6rem 2rem rgba(0, 0, 0, 0.23);
+}
+
+$bp-xl: 75em;      //1200px
+$bp-lg: 62.5em;       //1000px
+$bp-md: 50em;      //800px
+$bp-sm: 37.5em;  //600px
+
+::selection{
+    background-color: #00dd33;
+    color: #fff;
+}
+
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    // -webkit-font-smoothing: antialiased;
+    // -moz-osx-font-smoothing: grayscale;
+}
+
+html{
+    //1 rem is exactly the root font size. In order to make our life easier lets change the font size to 10px, 1rem = 10px. It's easier to calculate, you divide by 10.
+    //Default browser font size is 16px, 10/16=0.625
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Roboto Slab',-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto;
+    font-weight: 400;
+    //font-size: 16px;
+    //line-height: 1.7;
+    color: var(--color-dark-grey);
+    //padding: 2rem;
+    box-sizing: border-box;
+    background-color: var(--color-light-grey);
+}
+
+.center-text{
+    text-align: center;
+}
+
+.margin-bottom-sm{
+    margin-bottom: 1rem;
+}
+
+.margin-bottom-md{
+    margin-bottom: 4rem;
+}
+
+.margin-bottom-lg{
+    margin-bottom: 6rem;
+
+}
+
+.container{
+    max-width: 114rem;
+    margin: 0 auto;
+
+    @media only screen and (max-width:$bp-xl) {
+            padding: 0 2rem;
+    }
+}
+
+.blurred{
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+}
+
+@keyframes caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+@keyframes fadeUp{
+    0%{
+        opacity: 0;
+        transform: translateY(10rem);
+    }
+    80%{
+        transform: translateY(-1rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown{
+    0%{
+        opacity: 0;
+        transform: translateY(-5rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(4.6rem);
+  }
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes float {
+    0% {
+              transform: translatey(0px);
+    }
+    50% {
+              transform: translatey(-10px);
+    }
+    100% {
+              transform: translatey(0px);
+    }
+  }
+
+  @keyframes load-square-move {
+    0% {
+      opacity: 0;
+      transform: translateX(-50vw) scale(0.5);
+      animation-timing-function: cubic-bezier(.6,0,0,1);
+    }
+    40%, 60% {
+      opacity: 1;
+      transform: translateX(0vw) scale(1);
+      animation-timing-function: cubic-bezier(1,0,.5,1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(50vw) scale(0.5);
+    }
+  }
